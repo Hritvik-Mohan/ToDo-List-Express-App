@@ -134,13 +134,8 @@ app.post("/work", function (req, res) {
   res.redirect("/work");
 });
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 3000;
-}
-app.listen(port);
+app.listen(process.env.PORT);
 
-app.listen(port, function () {
+app.listen(3000, function () {
   console.log("Server has started on port successfully.");
 });
-
