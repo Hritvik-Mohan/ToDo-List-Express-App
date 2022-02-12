@@ -1,8 +1,8 @@
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const _ = require("lodash");
-
 const app = express();
 
 app.set("view engine", "ejs");
@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://hritvik:hritvik89@cluster0.qovog.mongodb.net/todoDB");
+mongoose.connect(process.env.MONGO_TOKEN);
 
 const itemsSchema = {
   name: String,
